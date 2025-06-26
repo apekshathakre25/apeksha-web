@@ -3,8 +3,6 @@ const UserTokenModel = require("../models/userTokenModel");
 const getPendingUsers = async (req, res) => {
   try {
     const pendingUsers = await UserTokenModel.find({ isApproved: false });
-
-
     res.json({
       success: true,
       users: pendingUsers.map((user) => ({
